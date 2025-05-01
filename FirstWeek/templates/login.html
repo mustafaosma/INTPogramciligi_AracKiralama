@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MO Rent a Car</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #790000;
+            color: rgb(175, 175, 175);
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .auth-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 10px;
+        }
+        
+        .auth-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .auth-form button {
+            background-color: #790000;
+            color: rgb(175, 175, 175);
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .auth-form button:hover {
+            background-color: #790000;
+        }
+        
+        .auth-form a {
+            text-decoration: none;
+            color: rgb(175, 175, 175);
+        }
+        
+        .auth-form a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="{{ url_for('static', filename='MORentaCar.png') }}" alt="MORentaCar">
+        <h1>MO Rent a Car</h1>
+        <p>Ucuz ve Güvenilir</p>
+    </header>
+
+    <div class="container">
+        <div class="auth-container">
+            <div class="auth-form">
+                <h2>Giriş Yap</h2>
+                <form action="#">
+                    <input type="email" name="email" placeholder="E-posta" required>
+                    <input type="password" name="password" placeholder="Şifre" required>
+                    <button type="submit">Giriş Yap</button>
+                </form>
+                <p>Hesabınız yok mu? <a href="/register">Kayıt Ol</a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.querySelector('#register-form').style.display = 'none';
+            document.querySelector('.auth-form').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>
