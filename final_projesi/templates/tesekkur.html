@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teşekkürler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="tesekkur">
+    <div class="card tesekkur">
+        <h1>İletiniz başarıyla iletilmiştir.</h1>
+        <a href="{{ url_for('index') }}" class="button tesekkur">Ana sayfaya dön</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <main>
+        <div class="card">
+            <header>
+                <h1>İletişim</h1>
+                <img class="car-img" src="{{ url_for('static', filename='MORentaCar.png') }}" alt="MORentaCar">
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Ana Sayfa</a></li>
+                        <li><a href="{{ url_for('araclar') }}">Araçlar</a></li>
+                        <li><a href="{{ url_for('iletisim') }}">İletişim</a></li>
+                        <li><a href="{{ url_for('kampanyalar') }}">Kampanyalar</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    {% if session.get('user_id') %}
+                    <span class="welcome-message">Hoş geldin, {{ session.get('username') }}!</span>
+                    <a href="{{ url_for('logout') }}" class="nav-button">Çıkış Yap</a> {% if session.get('is_admin') %}
+                    <a href="{{ url_for('admin') }}" class="nav-button">Admin Paneli</a> {% endif %} {% else %}
+                    <a href="{{ url_for('login') }}" class="nav-button">Giriş Yap</a>
+                    <a href="{{ url_for('register') }}" class="nav-button">Kayıt Ol</a> {% endif %}
+                </nav>
+            </header>
+
+            <main>
+                <section>
+                    <h2>Mesajınızı iletin</h2>
+                    <main>
+                        <div class="card">
+                            <form action="#" method="POST">
+                                <label for="name">Adınız:</label>
+                                <input type="text" id="name" name="name" required>
+
+                                <label for="email">E-posta:</label>
+                                <input type="email" id="email" name="email" required>
+
+                                <label for="message">Mesajınız:</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+
+                                <button type="submit">Gönder</button>
+                            </form>
+                            <div class="back-button">
+                                <a href="{{ url_for('index') }}">
+                                    <button>Ana Sayfaya Dön</button>
+                                </a>
+                            </div>
+                    </main>
+                </section>
+            </main>
+            </div>
+    </main>
+
+</body>
+
+</html>

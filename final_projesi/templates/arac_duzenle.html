@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Araç Düzenle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h2>Araç Düzenle</h2>
+    <form method="POST">
+        <label>Araç İsmi:</label><br>
+        <input type="text" name="isim" value="{{ arac[1] }}" required><br>
+        <label>Resim Yolu:</label><br>
+        <input type="text" name="resim_yolu" value="{{ arac[2] }}" required><br>
+        <label>Fiyat (TL):</label><br>
+        <input type="number" name="fiyat" value="{{ arac[3] }}" required><br><br>
+        <button type="submit">Kaydet</button>
+    </form>
+    </form>
+    <a href="/admin">İptal</a>
+    </div>
+</body>
+
+</html>

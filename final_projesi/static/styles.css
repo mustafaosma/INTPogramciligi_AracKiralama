@@ -1,0 +1,676 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #790000;
+    color: rgb(175, 175, 175);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    width: 120px;
+    height: auto;
+}
+
+header .header-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 32px;
+    margin: 0 15px 0 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #ffdddd;
+}
+
+.auth-buttons {
+    margin-left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons a {
+    background-color: white;
+    color: #790000;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: bold;
+    border: 1px solid #790000;
+}
+
+.auth-buttons a:hover {
+    background-color: #790000;
+    color: white;
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: none;
+    padding: 20px;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+footer {
+    background-color: #790000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.car-img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 30px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input,
+form select,
+form textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #790000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(121, 0, 0, 0.3);
+}
+
+button,
+input[type="submit"],
+.btn {
+    background-color: #790000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.btn:hover {
+    background-color: #a00000;
+    transform: scale(1.03);
+}
+
+.car-title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+a.btn {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #790000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.btn:hover {
+    background-color: #a00000;
+    transform: scale(1.05);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f9f9f9;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+}
+
+body.kiralama-basarili {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+body.kiralama-basarili h1 {
+    color: #dc2626;
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+body.kiralama-basarili a {
+    background-color: #b91c1c;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.kiralama-basarili a:hover {
+    background-color: #991b1b;
+    transform: scale(1.03);
+}
+
+.poster-img {
+    width: auto;
+    max-width: 100%;
+    max-height: 600px;
+    display: block;
+    margin: 20px auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+body.iade-basarili {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+body.iade-basarili h1 {
+    color: #dc2626;
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+body.iade-basarili a {
+    background-color: #b91c1c;
+    color: white;
+    padding: 10px 1px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.iade-basarili a:hover {
+    background-color: #991b1b;
+    transform: scale(1.03);
+}
+
+.back-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-button button {
+    background-color: #b91c1c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button button:hover {
+    background-color: #991b1b;
+}
+
+body.admin {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container.admin {
+    width: 100%;
+    max-width: 1600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-container.admin {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+h1.admin {
+    color: #790000;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2.admin {
+    color: #790000;
+    border-bottom: 2px solid #790000;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+table.admin {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+th,
+td.admin {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th.admin {
+    background-color: #790000;
+    color: white;
+    font-weight: bold;
+}
+
+table.admin tr:hover {
+    background-color: #f9f9f9;
+}
+
+img.admin {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: auto;
+}
+
+form.admin {
+    margin-top: 20px;
+    padding: 0px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: none;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: none;
+    border: none;
+    display: inline;
+}
+
+label.admin {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+input.admin[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button,
+input.admin[type="submit"] {
+    background-color: #790000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+input.admin[type="submit"]:hover {
+    background-color: #5a0000;
+}
+
+.toggle-admin-btn.admin {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-admin-btn.admin:hover {
+    background-color: #545b62;
+}
+
+.edit-btn.admin {
+    background-color: #c82333;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.edit-btn.admin:hover {
+    background-color: #5a0000;
+}
+
+.delete-btn.admin {
+    background-color: #c82333;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.delete-btn.admin:hover {
+    background-color: #5a0000;
+}
+
+.auth-buttons.admin {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.auth-buttons button.admin {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-buttons button.admin:hover {
+    background-color: #a71d2a;
+}
+
+.logout-btn.admin {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 14px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn.admin:hover {
+    background-color: #a71d2a;
+}
+
+body.tesekkur {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.card.tesekkur {
+    background-color: #fff;
+    padding: 40px;
+    margin: 100px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.button.tesekkur {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.button.tesekkur:hover {
+    background-color: #a71d2a;
+}
+
+body.admin {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.form-container.admin {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 80px auto;
+    width: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2.admin {
+    color: #790000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label.admin {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #790000;
+}
+
+input.admin {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.submit-btn.admin {
+    margin-top: 25px;
+    background-color: #790000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn.admin:hover {
+    background-color: #5a0000;
+}
+
+.cancel-btn.admin {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #666;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.cancel-btn.admin:hover {
+    color: #790000;
+}
+
+h1 {
+    text-align: center;
+}
+
+.nav-button {
+    padding: 8px 16px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: white;
+}
+
+.welcome-message {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 10px;
+}

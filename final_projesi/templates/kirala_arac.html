@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MO Rent a Car</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <h1>{{ arac[1] }} Kirala</h1>
+    <form method="post">
+        <input type="hidden" name="arac_ismi" value="{{ arac[1] }}">
+        <label>Alış Yeri:</label><input type="text" name="pickup-location" required>
+        <label>Bırakış Yeri:</label><input type="text" name="dropoff-location" required>
+        <label>Alış Tarihi:</label><input type="date" name="pickup-date" required>
+        <label>Bırakış Tarihi:</label><input type="date" name="dropoff-date" required>
+        <button type="submit">Aracı Kirala</button>
+    </form>
+    <div class="back-button">
+        <a href="{{ url_for('index') }}">
+            <button>Ana Sayfaya Dön</button>
+        </a>
+    </div>
+
+</body>
+
+</html>

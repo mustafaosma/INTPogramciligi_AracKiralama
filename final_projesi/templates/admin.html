@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="admin">
+    <div class="auth-buttons admin">
+        <a href="{{ url_for('logout') }}" class="logout-btn admin">Çıkış Yap</a>
+    </div>
+
+    <div class="container admin">
+        <h1 class="admin">Admin Panel</h1>
+
+        <h2 class="admin">Kiralanan Araçlar</h2>
+        <table class="admin">
+            <thead>
+                <tr>
+                    <th class="admin">ID</th>
+                    <th class="admin">Kullanıcı ID</th>
+                    <th class="admin">Araç İsmi</th>
+                    <th class="admin">Tarih</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for k in kiralamalar %}
+                <tr>
+                    <td>{{ k[0] }}</td>
+                    <td>{{ k[1] }}</td>
+                    <td>{{ k[2] }}</td>
+                    <td>{{ k[3] }}</td>
+                    <td>
+                        <form class="admin" action="/kiralama_sil/{{ k[0] }}" method="POST" style="display:inline;" onsubmit="return confirm('Bu kiralama kaydını silmek istediğinize emin misiniz?')">
+                            <button type="submit" class="delete-btn admin">Sil</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2 class="admin">Araçlar</h2>
+        <table class="admin">
+            <tr>
+                <th class="admin">ID</th>
+                <th class="admin">İsim</th>
+                <th class="admin">Resim</th>
+                <th class="admin">Fiyat</th>
+                <th class="admin">İşlem</th>
+            </tr>
+            {% for a in araclar %}
+            <tr>
+                <td>{{ a[0] }}</td>
+                <td>{{ a[1] }}</td>
+                <td><img src="{{ a[2] }}" alt="{{ a[1] }}" width="100"></td>
+                <td>{{ a[3] }}</td>
+                <td>
+                    <a href="/arac_duzenle/{{ a[0] }}" class="edit-btn admin">Düzenle</a>
+                    <form class="admin" action="/arac_sil/{{ a[0] }}" method="POST" style="display:inline;" onsubmit="return confirm('Bu aracı silmek istediğinize emin misiniz?')">
+                        <button type="submit" class="delete-btn admin">Sil</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2 class="admin">Yeni Araç Ekle</h2>
+        <form class="admin" method="post" action="/arac_ekle">
+            <label class="admin">Araç İsmi:</label><br>
+            <input class="admin" type="text" name="isim" required><br>
+            <label class="admin">Resim Yolu:</label><br>
+            <input type="text" name="resim_yolu" class="admin" required></br>
+            <label class="admin">Fiyat (TL):</label><br>
+            <input class="admin" type="text" name="fiyat" required><br><br>
+            <button type="submit" class="admin">Ekle</button>
+        </form>
+
+        <h2 class="admin">Kullanıcılar</h2>
+        <table class="admin">
+            <tr>
+                <th class="admin">ID</th>
+                <th class="admin">Kullanıcı Adı</th>
+                <th class="admin">Email</th>
+                <th class="admin">Yetki</th>
+                <th class="admin">İşlemler</th>
+            </tr>
+            {% for k in users %}
+            <tr>
+                <td>{{ k[0] }}</td>
+                <td>{{ k[1] }}</td>
+                <td>{{ k[3] }}</td>
+                <td>{{ 'Admin' if k[4] == 1 else 'user' }}</td>
+                <td>
+                    <a href="/yetki_ver/{{ k[0] }}">Yetki Ver</a> |
+                    <a href="/yetki_al/{{ k[0] }}">Yetki Al</a> |
+                    <a href="/kullanici_sil/{{ k[0] }}" onclick="return confirm('Silmek istediğine emin misin?')">Sil</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

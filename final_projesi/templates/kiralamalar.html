@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kiralama Kayıtları</title>
+</head>
+
+<body>
+    <h1>Kiralama Kayıtları</h1>
+
+    <a href="{{ url_for('logout') }}">Çıkış Yap</a>
+    <br><br>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Ad Soyad</th>
+            <th>Araç</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>Telefon</th>
+        </tr>
+        {% for kayit in kayitlar %}
+        <tr>
+            <td>{{ kayit[0] }}</td>
+            <td>{{ kayit[1] }}</td>
+            <td>{{ kayit[2] }}</td>
+            <td>{{ kayit[3] }}</td>
+            <td>{{ kayit[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MO Rent a Car</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+    <main>
+        <div class="card">
+            <header>
+                <div class="header-content">
+                    <h1>MO Rent a Car</h1>
+                    <img class="car-img" src="{{ url_for('static', filename='MORentaCar.png') }}" alt="MORentaCar">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Ana Sayfa</a></li>
+                        <li><a href="{{ url_for('araclar') }}">Araçlar</a></li>
+                        <li><a href="{{ url_for('iletisim') }}">İletişim</a></li>
+                        <li><a href="{{ url_for('kampanyalar') }}">Kampanyalar</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    {% if session.get('user_id') %}
+                    <span class="welcome-message">Hoş geldin, {{ session.get('username') }}!</span>
+                    <a href="{{ url_for('logout') }}" class="nav-button">Çıkış Yap</a> {% if session.get('is_admin') %}
+                    <a href="{{ url_for('admin') }}" class="nav-button">Admin Paneli</a> {% endif %} {% else %}
+                    <a href="{{ url_for('login') }}" class="nav-button">Giriş Yap</a>
+                    <a href="{{ url_for('register') }}" class="nav-button">Kayıt Ol</a> {% endif %}
+                </nav>
+
+            </header>
+            <main>
+                <div>
+                    <h2 class="car-title">Araç kiralamanın En Doğru Adresi</h2>
+                    <p>Yüzlerce araç kiralama firmasını bünyesinde barındıran MO Rent a Car, sana Türkiye’nin 81 ilinde kolay ve güvenli kiralama seçenekleri sunuyor...</p>
+                </div>
+
+                <section class="homepage-poster">
+                    <img src="{{ url_for('static', filename='AnaPoster.png') }}" alt="MO Rent A Car Tanıtım Posteri" class="poster-img">
+                </section>
+
+                <section class="return-section">
+                    <h2 class="car-title">Araç İade Formu</h2>
+                    <form action="#" method="POST" class="return-form">
+                        <div class="form-group">
+                            <label for="return-date">İade Tarihi:</label>
+                            <input type="date" id="return-date" name="return-date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="return-condition">Araç Durumu:</label>
+                            <select id="return-condition" name="return-condition" required>
+                        <option value="iyi">İyi</option>
+                        <option value="hasarli">Hasarlı</option>
+                        <option value="kirilmis">Kırılmış</option>
+                    </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="return-comments">Ekstra Yorumlar:</label>
+                            <textarea id="return-comments" name="return-comments" rows="4" placeholder="Araçla ilgili herhangi bir ekstra yorum ekleyebilirsiniz."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit">İade Et</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="rental-tips">
+                    <h2 class="car-title">Araç Kiralarken Dikkat Edilmesi Gerekenler</h2>
+                    <ul>
+                        <li><strong>Sigorta Seçeneklerini Kontrol Et:</strong> Kiralama sırasında aracın sigorta kapsamını sorgula. İhtiyacın olup olmadığını değerlendirmek için araç sigortası hakkında bilgi al.</li>
+                        <li><strong>Yolda Kalan Yardımı:</strong> Yolda kalman durumunda, kiralama şirketinin sunduğu 7/24 yardım hattını öğren. Bu hizmeti kullanabilmek için anlaşmanı kontrol et.</li>
+                        <li><strong>Aracın Durumunu Kontrol Et:</strong> Aracı teslim almadan önce aracın dışını ve içini kontrol et. Herhangi bir hasar varsa, kiralama şirketine bildirdiğinden emin ol.</li>
+                        <li><strong>Depozito Koşullarını Öğren:</strong> Araç kiralama firmaları genellikle bir depozito talep eder. Depozito miktarını öğren ve iade koşullarını netleştir.</li>
+                        <li><strong>Yaş Sınırlamalarına Dikkat Et:</strong> Çoğu araç kiralama firması, belirli bir yaş sınırına sahiptir. Bu yüzden, yaşınızın uygun olup olmadığını kontrol edin.</li>
+                        <li><strong>Kilometre Sınırlarını Kontrol Et:</strong> Bazı araç kiralama firmaları, belirli bir kilometre limiti koyar. Bu limiti aşman durumunda ekstra ücretler uygulanabilir.</li>
+                        <li><strong>Yakıt Politikası:</strong> Aracın yakıt politikası hakkında bilgi edin. Çoğu firma, aracı full tank teslim almanı ister. Aracı aynı şekilde geri getirmen önemlidir.</li>
+                    </ul>
+                </section>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="araclar.html">Araçlar</a></li>
+                        <li><a href="fiyatlar.html">Araç Fiyatları</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li><a href="kampanyalar.html">Kampanyalar</a></li>
+
+                    </ul>
+                </nav>
+
+
+            </main>
+        </div>
+    </main>
+</body>
+
+</html>
